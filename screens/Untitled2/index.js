@@ -1,9 +1,13 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Image, StyleSheet } from 'react-native';
 
 const SplashScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
-      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      <Pressable onPress={() => {
+      navigation.navigate("Untitled4");
+    }}><Image source={require('../assets/logo.png')} style={styles.logo} /></Pressable>
     </View>;
 };
 

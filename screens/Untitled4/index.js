@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const ResetPasswordScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
 
   const handleResetPassword = () => {// SendGrid API call to send password reset link to user's email
@@ -11,7 +14,9 @@ const ResetPasswordScreen = () => {
       <Text style={styles.title}>Enter registered email</Text>
       <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
       <TouchableOpacity style={styles.button} onPress={handleResetPassword}>
-        <Text style={styles.buttonText}>Reset Password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("Untitled3");
+      }}><Text style={styles.buttonText}>Reset Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.cancelButton}>
         <Text style={styles.cancelButtonText}>Cancel</Text>
