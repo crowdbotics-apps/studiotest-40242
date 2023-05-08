@@ -1,12 +1,9 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const ProfileScreen = () => {
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Image style={styles.profileImage} source={{
-        uri: 'https://via.placeholder.com/150'
-      }} />
+        
         <Text style={styles.fullName}>John Doe</Text>
         <Text style={styles.address}>123 Main St, Anytown USA</Text>
       </View>
@@ -32,12 +29,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc'
-  },
-  profileImage: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
-    marginBottom: 10
   },
   fullName: {
     fontSize: 24,
