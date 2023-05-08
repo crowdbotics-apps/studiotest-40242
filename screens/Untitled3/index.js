@@ -1,6 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet } from 'react-native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         
@@ -9,11 +12,13 @@ const ProfileScreen = () => {
       </View>
       <View style={styles.body}>
         <Text style={styles.sectionTitle}>About Me</Text>
-        <Text style={styles.aboutMe}>
+        <Pressable onPress={() => {
+        navigation.navigate("accountSettings");
+      }}><Text style={styles.aboutMe}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
           euismod nisi, vel bibendum sapien. Sed euismod euismod nisi, vel
           bibendum sapien.
-        </Text>
+        </Text></Pressable>
       </View>
     </View>;
 };
